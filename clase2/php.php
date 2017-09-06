@@ -1,6 +1,6 @@
 <?php
 $variable="Hola Mundo";
-$alumnos=array (''=>,);
+$alumnos=array (' '=>,);
 $alumnos=['Stefany ' => 5.2,'Diego'=>5.5,'Felipe'=>6.5];
 
 ?>
