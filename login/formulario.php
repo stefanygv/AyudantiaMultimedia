@@ -1,94 +1,68 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<link rel="stylesheet" type="text/css" href="fonts.css">
+<link rel="stylesheet" type="text/css" href="still.css">
+<link rel="stylesheet" type="text/css" href="menu.css">
+<link rel="icon" type="text/css" href="mascotas.ico">
+
 
 <style type="text/css">
-
-BODY { background: url(https://i.gse.io/gse_media/115/10/1448396255-Pet-Expo-tickets-1.jpg?p=1) center fixed no-repeat} 
+BODY { background: url(http://www.sanantoniotaxicabservice.com/wp-content/uploads/2013/07/minimal-gray-to-white-gradient-wallpapers1.jpg) no-repeat center center fixed;} 
 
 </style></head>
- 
-<body>
-</body>
 </html>
+
 <html>
-<head>
-<style>
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
 
-li {
-    float: left;
-}
-
-li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}
-</style>
-</head>
 <body>
-
+	
+	<title>Formulario</title>
 <ul>
-  <li><a href="Bienvenidos.html">Bienvenidos</a></li>
+ <li><a href="Bienvenidos.html">Bienvenidos</a></li>
   <li><a href="formulario.php">Ingresar Usuario</a></li>
   <li><a href="usuarios_modificar.php">Modificar Usuario</a></li> 
   <li><a href="listado.php">Ver Listado</a></li>
   <li><a href="logout.php">Logout</a></li>
 </ul>
-
+</nav>
+  </header>
 </body>
 </html>
-
 
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-
-
 </head>
 
 <body>
-
 <div class="container">
-	<div class="row"> 
-		<div class="col-md-6 well">
-		<form name="formulario" method="post" action="formulario.php" enctype="multipart/form-data">
+	<div class="row"> 	
+		<div class="col-md-4 col-md-offset-3 well"  class=img-responsive >
+		<form name="formulario" method="post" action="formulario.php" enctype="multipart/form-data" >
+		<form class="form-horizontal">
+			
 <title>Ingresar Usuarios</title>
 
-Nombre Dueño: <input type="text" name="nombre_due&ntildeo" value="" class="form-control"></br> 
-Rut: <input type="text" name="rut" value="" class="form-control"><br> 
-dv: <input type="text" name="dv" value="" class="form-control"><br> 
-
-Fecha De Nacimiento Mascota: <input type="date" name="fecha_de_nacimiento" class="form-control"><br>
-Nombre Mascota: <input type="text" name="nombre_mascota" value="" class="form-control"></br> 
-Tipo De Sangre: <input type="text" name="tipo_sangre" value="" class="form-control"><br> 
-Vacuna: <input type="text" name="vacuna" value="" class="form-control"><br> 
-Enfermedad: <input type="text" name="enfermedad" value="" class="form-control"><br>
-Tipo De Raza: <input type="text" name="tipo_raza" value="" class="form-control"><br> 
-Sexo: <input type="text" name="sexo" value="" class="form-control"><br> 
-Telefono: <input type="text" name="telefono" value="" class="form-control"><br> 
-<!--Sexo <br/>
+Nombre Dueño: <input type="text" name="nombre_dueno" value="" class="form-control" placeholder="Ingresa Nombre"></br> 
+Rut: <input type="text" name="rut" value="" class="form-control" placeholder="Ingresa Rut"><br> 
+dv: <input type="text" name="dv" value="" class="form-control" placeholder="Ingresa Codigo Verificador"><br> 
+Fecha De Nacimiento Mascota: <input type="date" name="fecha_de_nacimiento" class="form-control" placeholder="Ingresa Fecha Nacimiento"><br>
+Nombre Mascota: <input type="text" name="nombre_mascota" value="" class="form-control" placeholder="Ingresa Nombre de Mascota"></br> 
+Tipo De Sangre: <input type="text" name="tipo_sangre" value="" class="form-control" placeholder="Ingresa Un Tipo de Sangre"><br> 
+Vacunas: <input type="text" name="vacuna" value="" class="form-control" placeholder="Tipo de Vacuna"><br> 
+Enfermedad: <input type="text" name="enfermedad" value="" class="form-control" placeholder="Enfermedad de Mascota"><br>
+Tipo De Raza: <input type="text" name="tipo_raza" value="" class="form-control" placeholder="Tipo de Raza" ><br> 
+<!--Sexo: <input type="text" name="sexo" value="" class="form-control" placeholder="Macho o Hembra"><br> -->
+Telefono: <input type="text" name="telefono" value="" class="form-control" placeholder="Ingrese Telefono"><br> 
+Sexo: </br>
 <input type="radio" name="sexo" value="macho" checked="checked" /> Macho
-<input type="radio" name="sexo" value="hembra" /> Hembra -->
-<input type="file" name="imagen" id="imagen" />
+<input type="radio" name="sexo" value="hembra" /> Hembra<br>
+<br>
+<input type="file" name="imagen" id="imagen"><br>
+<br>
 <input type="submit" name="submit" value = "enviar" class="btn btn-danger" />
 
 </form>
@@ -96,10 +70,6 @@ Telefono: <input type="text" name="telefono" value="" class="form-control"><br>
 </div>
 	</div>
 	
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-
-
 </body>
 </html>	
 
@@ -131,7 +101,6 @@ if(isset($_POST['submit'])){
 			}else{
 				mkdir("Usuarios/$rut");
 				copy($_FILES['imagen']['tmp_name'], "Usuarios/$rut/nuevaImagen.jpg");
-				$url = "localhost/Usuarios/$rut/usuarios.php?id=";
 				$urlimagen = "Usuarios/$rut/nuevaimagen.png";
 				$insert_row = $mysqli->query("INSERT INTO mascotas (nombre_dueno, rut, dv, fecha_de_nacimiento, nombre_mascota, tipo_sangre, vacuna, enfermedad, tipo_raza, sexo, telefono, Imagen) 
 				VALUES('".$nombre_dueno."', '".$rut."', '".$dv."', '".$fecha_de_nacimiento."', '".$nombre_mascota."', '".$tipo_sangre."','".$vacuna."','".$enfermedad."','".$tipo_raza."','".$sexo."','".$telefono."','".$urlimagen."')");
@@ -146,11 +115,8 @@ if(isset($_POST['submit'])){
 
     $codeContents  = 'BEGIN:VCARD'."\n"; 
     $codeContents .= 'FN:'.$nombre_dueno."\n";
-    //$codeContents .= 'FN:'.$Rut."\n";
     $codeContents .= 'FN:'.$nombre_mascota."\n";
-    //$codeContents .= 'FN:'.$Direccion."\n"; 
-    $codeContents .= 'TEL;WORK;VOICE:'.$telefono."\n"; 
-    //$codeContents .= 'FN:'.$ImagenGuar."\n";
+    $codeContents .= 'TEL;WORK;VOICE:'.$telefono."\n";  
     $codeContents .= 'END:VCARD'; 
   
     QRcode::png($codeContents,"Usuarios/$rut/".$rut.".png",L,4,1);
@@ -166,6 +132,3 @@ if(isset($_POST['submit'])){
 
 }
 ?>
-
-
-

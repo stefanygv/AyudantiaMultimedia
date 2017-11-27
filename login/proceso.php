@@ -4,7 +4,7 @@ $usuario =$_POST['usuario'];
 $password=$_POST['password'];
 
 //conectar a la base de datos
-$conexion=mysqli_connect('localhost','root', '' ,'ayuda');
+$conexion=mysqli_connect('localhost','root', '' ,'proyectomultimedia');
 
 $consulta="SELECT * FROM usuarios where usuario ='$usuario' and password='$password'";
 
@@ -14,11 +14,10 @@ $filas = mysqli_num_rows($resultado);
 
 if($filas > 0) {
       header("location:bienvenidos.html");
-
-
 	}
 else {
-	echo "Error en la autentificación";
+	      header("location:login.php");
+		echo "Error en la autentificación";
 }
 
 mysqli_free_result($resultado); // que libere los resultados 

@@ -3,43 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-<style type="text/css">
 
-BODY { background: url(https://i.gse.io/gse_media/115/10/1448396255-Pet-Expo-tickets-1.jpg?p=1) center fixed no-repeat} 
+<link rel="stylesheet" type="text/css" href="fonts.css">
+<link rel="stylesheet" type="text/css" href="still.css">
+<link rel="icon" type="text/css" href="mascotas.ico">
+<link rel="stylesheet"  href="menu.css">
+<style type="text/css">
+BODY { background: url(http://www.sanantoniotaxicabservice.com/wp-content/uploads/2013/07/minimal-gray-to-white-gradient-wallpapers1.jpg) no-repeat center center fixed;} 
 
 </style></head>
  
 <body>
 </body>
 </html>
-<html>
-<head>
-<style>
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
 
-li {
-    float: left;
-}
-
-li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}
-</style>
-</head>
 <body>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
@@ -76,29 +53,30 @@ if(isset($_GET['rut'])) {
 <body>
 
 <div class="container">
-	<div class="row"> 
-		<div class="col-md-6 well">
-Nombre Dueno: <input type="text" name="nombre_dueno" value="'.$row['nombre_dueno'].'"><br>
-Rut: <input type="text" name="rut" value="'.$row['rut'].' " readonly><br>
-Dv: <input type="text" name="dv" value="'.$row['dv'].'"><br>
-Fecha De Nacimiento Mascota: <input type="date" name="fecha_de_nacimiento" readonly><br>
-Nombre Mascota: <input type="text" name="nombre_mascota" value="'.$row['nombre_mascota'].'"><br>
-Tipo De Sangre: <input type="text" name="tipo_sangre" value="'.$row['tipo_sangre'].'"><br>
-Vacuna: <input type="text" name="vacuna" value="'.$row['vacuna'].'"><br>
-Enfermedad: <input type="text" name="enfermedad" value="'.$row['enfermedad'].'"><br>
-Tipo De Raza: <input type="text" name="tipo_raza" value="'.$row['tipo_raza'].'"><br>
-Sexo: <input type="text" name="sexo" value="'.$row['sexo'].'"><br>
-Telefono: <input type="text" name="telefono" value="'.$row['telefono'].'"><br>
+  <div class="row"> 
+    <div class="col-md-4 well">
+Nombre Due&ntildeo: <input type="text" name="nombre_dueno"  class="form-control"  value="'.$row['nombre_dueno'].'"><br>
+Rut: <input type="text" name="rut"   class="form-control"  value="'.$row['rut'].' " readonly><br>
+Dv: <input type="text" name="dv"  class="form-control"   value="'.$row['dv'].'"><br>
+Fecha De Nacimiento Mascota: <input type="date" name="fecha_de_nacimiento"  class="form-control"  readonly><br>
+Nombre Mascota: <input type="text" name="nombre_mascota" class="form-control"  value="'.$row['nombre_mascota'].'"><br>
+Tipo De Sangre: <input type="text" name="tipo_sangre" class="form-control" value="'.$row['tipo_sangre'].'"><br>
+Vacuna: <input type="text" name="vacuna" class="form-control"  value="'.$row['vacuna'].'"><br>
+Enfermedad: <input type="text" name="enfermedad" class="form-control"  value="'.$row['enfermedad'].'"><br>
+Tipo De Raza: <input type="text" name="tipo_raza" class="form-control" value="'.$row['tipo_raza'].'"><br>
+Sexo: <input type="text" name="sexo" class="form-control"  value="'.$row['sexo'].'"><br>
+Telefono: <input type="text" name="telefono" class="form-control" value="'.$row['telefono'].'"><br>
 
 <input type="submit" name = "submit" value="Modificar" class="btn btn-danger">
 
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
 </form>';
     }
 }
 
  ?>
+
 
 
  <?php 
@@ -117,6 +95,7 @@ if(isset($_POST['submit'])){
 	$insert_row = $mysqli->query("UPDATE mascotas SET dv ='".$dv."', nombre_dueno ='".$nombre_dueno."', nombre_mascota = '".$nombre_mascota."', tipo_sangre = '".$tipo_sangre."', vacuna = '".$vacuna."', enfermedad = '".$enfermedad."', tipo_raza = '".$tipo_raza."', sexo = '".$sexo."', telefono = '".$telefono."' WHERE rut = '".$rut."'");
 
 if($insert_row){
+    header('Location: usuarios_modificar.php');                    
     print 'Datos modificados' .$mysqli->insert_id .'<br />'; 
 }else{
     die('Error : ('. $mysqli->errno .') '. $mysqli->error);
